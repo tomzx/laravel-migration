@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+$autoload_paths = array(
+	__DIR__.'/../vendor/autoload.php',
+	__DIR__.'/../../../autoload.php',
+);
+
+$found = false;
+foreach ($autoload_paths as $path) {
+	if (file_exists($path)) {
+		require $path;
+		$found = true;
+		break;
+	}
+}
+
+if (!$found) {
+	die(
+		'laravel-migration requires to be installed through composer.'.PHP_EOL.
+		'See http://getcomposer.org/download/'.PHP_EOL
+	);
+}
+
+$app = new \tomzx\LaravelMigration\Console\Application();
+$app->run();

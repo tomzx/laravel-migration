@@ -1,0 +1,49 @@
+{
+	"name": "tomzx/laravel-migration",
+	"description": "A migration service based on Laravel Database package.",
+	"type": "library",
+	"keywords": [
+		"database",
+		"migration"
+	],
+	"homepage": "https://github.com/tomzx/laravel-migration",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Tom Rochette",
+			"email": "tom@tomrochette.com",
+			"homepage": "http://www.tomrochette.com"
+		}
+	],
+	"support": {
+		"issues": "https://github.com/tomzx/laravel-migration/issues"
+	},
+	"require": {
+		"php": ">=5.4.0",
+		"illuminate/config": "~4.2|~5.0",
+		"illuminate/console": "~4.2|~5.0",
+		"illuminate/database": "~4.2|~5.0",
+		"illuminate/events": "~4.2|~5.0",
+		"illuminate/filesystem": "~4.2|~5.0"
+	},
+	"require-dev": {
+		"phpunit/phpunit": "~4",
+		"mockery/mockery": "~0.9"
+	},
+	"autoload": {
+		"psr-4": {
+			"tomzx\\LaravelMigration\\": "src/tomzx/LaravelMigration",
+			"Illuminate\\Foundation\\": "src/Illuminate/Foundation"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"tomzx\\LaravelMigration\\Test\\": "tests/tomzx/LaravelMigration"
+		}
+	},
+	"extra": {
+		"branch-alias": {
+			"dev-master": "0.1-dev"
+		}
+	}
+}
