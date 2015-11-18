@@ -18,7 +18,7 @@ This project currently uses some from of "hack" by creating some files in the `I
 
 ## Getting Started
 
-The current implementation looks for a file `config.php` in the current working directory. Migrations are expected to be in a folder called `migrations`.
+The current implementation looks in the current working directory for a configuration file `config.php` and migration files in the `migrations` directory.
 
 ```
 your-project
@@ -31,9 +31,16 @@ your-project
 --- LaravelMigration
 ```
 
-To use the tool, you would call `laravel-migration` in the following way:
+To use the tool, you would call `laravel-migration` within the `database` directory in the following way:
 
 `php ../bin/laravel-migration`
+
+Thus, the current setup steps are:
+
+1. Create a directory where you will store your `config.php` and `migrations` files
+2. Copy `config.php` to your newly created directory and configure it to your needs
+3. Create a `migrations` directory in the newly created directory
+4. You may now enjoy `laravel-migration`!
 
 ## License
 
