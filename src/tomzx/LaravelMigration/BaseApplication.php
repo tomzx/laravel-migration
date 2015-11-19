@@ -24,9 +24,12 @@ class BaseApplication extends Container
     {
     }
 
+    /**
+     * @return string
+     */
     public function databasePath()
     {
-        return getcwd();
+        return $this['path.database'];
     }
 
     /**

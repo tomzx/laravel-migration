@@ -18,12 +18,30 @@ This project currently uses some from of "hack" by creating some files in the `I
 
 ## Getting Started
 
-The current implementation looks in the current working directory for a configuration file `config.php` and migration files in the `migrations` directory.
+### Laravel 4
+
+Due to technical constraints, the folder structure in Laravel 4 has to be a certain way (specifically, we need a `database/migrations` path). You can follow Laravel 5 instructions on how to get started, simply make sure that you create the `database/migrations` path (instead of simply `migrations`).
 
 ```
 your-project
 - database
--- config.php
+-- database.php
+-- database
+--- migrations
+---- 2015_11_17_215411_some_migration.php
+- vendor
+-- tomzx
+--- LaravelMigration
+```
+
+### Laravel 5
+
+The current implementation looks in the current working directory for a configuration file `database.php` and migration files in the `migrations` directory.
+
+```
+your-project
+- database
+-- database.php
 -- migrations
 --- 2015_11_17_215411_some_migration.php
 - vendor
@@ -33,12 +51,12 @@ your-project
 
 To use the tool, you would call `laravel-migration` within the `database` directory in the following way:
 
-`php ../bin/laravel-migration`
+`php ../vendor/bin/laravel-migration`
 
 Thus, the current setup steps are:
 
-1. Create a directory where you will store your `config.php` and `migrations` files
-2. Copy `config.php` to your newly created directory and configure it to your needs
+1. Create a `database` directory where you will store your `database.php` and `migrations` files
+2. Copy `database.php` to your newly created directory and configure it to your needs
 3. Create a `migrations` directory in the newly created directory
 4. You may now enjoy `laravel-migration`!
 
